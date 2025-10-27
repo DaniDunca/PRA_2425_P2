@@ -3,11 +3,12 @@
 #include <vector>
 #include "DyH.h"
 
-void testBusquedaInt() {
-    std::vector<int> v{2, 4, 6, 8, 10};
-    int x = 6;
-    int pos = BusquedaBinaria(x, v, 0, v.size() - 1);
-    std::cout << "[INT] Posición de " << x << ": " << pos << std::endl;
+
+void testBusquedaInt_INV() {
+    std::vector<int> v{20, 15, 10, 5, 0};
+    int x = 10;
+    int pos = BusquedaBinaria_INV(x, v, 0, v.size() - 1);
+    std::cout << "[INT DESC] Posición de " << x << ": " << pos << std::endl;
 }
 
 void testBusquedaFloat() {
@@ -17,17 +18,19 @@ void testBusquedaFloat() {
     std::cout << "[FLOAT] Posición de " << x << ": " << pos << std::endl;
 }
 
-void testBusquedaChar() {
-    std::vector<char> v{'a', 'c', 'e', 'g', 'i'};
-    char x = 'e';
-    int pos = BusquedaBinaria(static_cast<int>(x), std::vector<int>(v.begin(), v.end()), 0, v.size() - 1);
-    std::cout << "[CHAR] Posición de '" << x << "': " << pos << std::endl;
+
+void testBusquedaChar_INV() {
+    std::vector<char> v{'z', 'x', 'v', 't', 'r'};
+    char x = 'v';
+    int pos = BusquedaBinaria_INV(static_cast<int>(x), std::vector<int>(v.begin(), v.end()), 0, v.size() - 1);
+    std::cout << "[CHAR DESC] Posición de '" << x << "': " << pos << std::endl;
 }
 
+
 int main() {
-    testBusquedaInt();
+    testBusquedaInt_INV();
     testBusquedaFloat();
-    testBusquedaChar();
+    testBusquedaChar_INV();
     return 0;
 }
 
